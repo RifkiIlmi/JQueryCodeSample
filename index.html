@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>JQuery Tutorial</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+
+
+        <div class="jumbotron ">
+            <div class="header text-center">
+                <h1>Belajar JQuery</h1>
+                <img src="img/thumbs/4.png" class="rounded-circle mx-auto img-thumbnail" width="400px" height="300px"
+                    alt="4">
+            </div>
+            <div class="row mt-3 text-center">
+                <div class="col">
+                    <a href="#" data-id="card1" class="btn btn-dark cardbutton">Button1</a>
+                    <a href="#" data-id="card2" class="btn btn-dark cardbutton">Button2</a>
+                    <a href="#" data-id="card3" class="btn btn-dark cardbutton">Button3</a>
+                    <a href="#" data-id="card4" class="btn btn-dark cardbutton">Button4</a>
+                </div>
+            </div>
+            <div class="row mt-4 ">
+                <div class="col-xs-3 mx-auto">
+                    <div id="card1" class="card border-dark mb-3" style="max-width: 10rem;">
+                        <div class="card-header">Header 1</div>
+                        <div class="card-body text-dark">
+                            <p class="card-text">Some content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-3 mx-auto">
+                    <div id="card2" class="card border-dark mb-3" style="max-width: 10rem;">
+                        <div class="card-header">Header 2</div>
+                        <div class="card-body text-dark">
+                            <p class="card-text">Some content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="card3" class="col-xs-3 mx-auto">
+                    <div class="card border-dark mb-3" style="max-width: 10rem;">
+                        <div class="card-header">Header 3</div>
+                        <div class="card-body text-dark">
+                            <p class="card-text">Some content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-3 mx-auto">
+                    <div id="card4" class="card border-dark mb-3" style="max-width: 10rem;">
+                        <div class="card-header">Header 4</div>
+                        <div class="card-body text-dark">
+                            <p class="card-text">Some content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="list">
+                <li>1</li>
+                <li class="special">2</li>
+                <li>3</li>
+                <li>
+                    <ul class="sublist">
+                        <li>12</li>
+                        <li>13</li>
+                        <li>14</li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+    <script src="js/jquery.min.js"></script>
+
+    <script>
+        $(function () {
+
+            $('.cardbutton').on('click', function () {
+                let id = $(this).attr('data-id');
+                $('#' + id).toggle(1000);
+            })
+
+            $('li').on('click',function () {
+                if ($(this).parent().is('.sublist')) {
+                    $(this).css({color:'red'});
+                    $(this).css({fontSize:'24px'});
+                }else{
+                    $(this).css({color:'blue'});
+
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

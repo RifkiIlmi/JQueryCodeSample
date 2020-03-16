@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>JQuery Tutorial 2</title>
+    <style>
+        
+        #display{
+            width: 250px;
+            height: 250px;
+            border: 1px dashed red;
+            
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron ">
+            <div class="header text-center">
+                <h1>Belajar JQuery Text Boxes</h1>
+            </div>
+            <div class="form-group">
+                <input id="data" type="text" class="form-control mb-3">
+                <button id="submit" class="btn btn-primary" type="submit">Masukkan</button>
+            </div>
+            <div id="display"></div>
+        </div>
+
+    </div>
+    <script src="js/jquery.min.js"></script>
+
+    <script>
+        $(function () {
+            $('#submit').click(function () {
+                var txt = $('#data').val();
+
+                $('#display').append('<p>'+txt+'</p>');
+            })
+        })
+    </script>
+</body>
+
+</html>
